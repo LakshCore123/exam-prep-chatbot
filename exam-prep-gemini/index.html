@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exam Prep Chatbot</title>
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="logo">
+        <span class="logo-icon">📚</span>
+        <div>
+          <h1>ExamPrep AI</h1>
+          <p>Powered by Google Gemini — Free</p>
+        </div>
+      </div>
+    </header>
+
+    <div id="subjects-bar">
+      <button class="chip active" data-subject="General">All Subjects</button>
+      <button class="chip" data-subject="Mathematics">Mathematics</button>
+      <button class="chip" data-subject="Physics">Physics</button>
+      <button class="chip" data-subject="Chemistry">Chemistry</button>
+      <button class="chip" data-subject="Biology">Biology</button>
+      <button class="chip" data-subject="History">History</button>
+      <button class="chip" data-subject="Computer Science">Computer Science</button>
+      <button class="chip" data-subject="Economics">Economics</button>
+    </div>
+
+    <div id="chat-window">
+      <div class="msg bot">
+        <div class="avatar">AI</div>
+        <div class="bubble">
+          <p>Hi! I'm your exam prep assistant. Select a subject and ask me anything — I'll give structured answers with definitions, explanations, and examples.</p>
+          <div class="suggestions" id="starter-suggestions">
+            <button class="suggestion" onclick="fillQ('What is photosynthesis?')">What is photosynthesis?</button>
+            <button class="suggestion" onclick="fillQ('Explain Newton\'s laws of motion')">Newton's laws of motion</button>
+            <button class="suggestion" onclick="fillQ('What is the Pythagorean theorem?')">Pythagorean theorem</button>
+            <button class="suggestion" onclick="fillQ('What caused World War I?')">What caused WW1?</button>
+            <button class="suggestion" onclick="fillQ('What is OOP in programming?')">What is OOP?</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="input-row">
+      <input id="q-input" type="text" placeholder="Ask an exam question..." autocomplete="off" />
+      <button id="send-btn" onclick="sendQuestion()">Ask ↗</button>
+    </div>
+  </div>
+
+  <script type="module" src="src/chatbot.js"></script>
+</body>
+</html>
